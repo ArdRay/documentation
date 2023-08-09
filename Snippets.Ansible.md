@@ -2,9 +2,14 @@
 id: ps1of3oarlgpwg0tdfp6r60
 title: Ansible
 desc: ''
-updated: 1677511395305
+updated: 1691524156277
 created: 1677510189090
 ---
+
+## Vault operations
+
+ansible-vault encrypt_string --vault-password-file .vault 'xx' --name 'xx_password'
+ansible localhost -m debug -a 'var=xx_password' --vault-password-file .vault
 
 ## Copy file and restart service afterwards
 
