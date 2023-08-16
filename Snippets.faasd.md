@@ -2,7 +2,7 @@
 id: lolqgxg8cvz3sifgdcow7od
 title: faasd
 desc: ''
-updated: 1691513855186
+updated: 1692207359906
 created: 1690453986648
 ---
 
@@ -51,3 +51,16 @@ faas-cli secret create redis-ca --from-file=/data/faasd_workshop/secrets/ca.crt
 3. docker build --no-cache --network=host -t harbor.domain.ch/security/images/faas/healthz:latest .
 4. docker push harbor.domain.ch/security/images/faas/healthz:latest
 5. faas-cli deploy -f ./healthz.yml
+
+# Response
+
+def return_response(HTTPstatusCode, HTTPbody):
+    return(
+        {
+            "statusCode": HTTPstatusCode,
+            "body": HTTPbody,
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    )
