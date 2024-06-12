@@ -16,3 +16,9 @@ created: 1679300155752
 
 ## Connect to website
 `openssl s_client -connect test.io:443 -tls1_3`
+
+## Convert CRT to PEM
+`openssl x509 -in mycert.crt -out mycert.pem -outform PEM`
+
+## Convert PKCS#1 to PKCS#8
+`openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in pkcs1.key -out pkcs8.key`
